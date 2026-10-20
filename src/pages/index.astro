@@ -1,0 +1,41 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import InteractionCheck from '@/components/interactive/InteractionCheck';
+import { localBusiness } from '@/lib/seo/config';
+---
+
+<BaseLayout
+  title="Milkshakes & snacks in Jaffna"
+  structuredData={localBusiness(Astro.site!)}
+>
+  <div class="page-container section-space">
+    <p class="mb-4 text-sm font-medium tracking-wide text-neutral-600">
+      Jaffna, Sri Lanka
+    </p>
+    <h1 class="text-[clamp(2.5rem,8vw,5rem)] leading-tight font-semibold tracking-tight">
+      Shakerz
+    </h1>
+    <p class="mt-4 max-w-prose text-lg leading-relaxed text-neutral-600">
+      Milkshakes, snacks, and something fresh on the way.
+    </p>
+    <section
+      aria-labelledby="verification-title"
+      class="mt-10 max-w-xl space-y-5 rounded-2xl border border-neutral-200 p-6 sm:p-8"
+    >
+      <h2 id="verification-title" class="text-xl font-semibold">
+        Development preview
+      </h2>
+      <p class="leading-relaxed text-neutral-600">
+        A small interaction to verify the website foundation. This is a
+        technical preview, not the final Shakerz design.
+      </p>
+      <InteractionCheck client:visible />
+      <noscript>
+        <p>
+          The website content is available without JavaScript. This optional
+          interaction requires JavaScript.
+        </p>
+      </noscript>
+    </section>
+  </div>
+</BaseLayout>

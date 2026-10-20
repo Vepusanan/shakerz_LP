@@ -1,0 +1,30 @@
+@import 'tailwindcss';
+
+/* Neutral verification styles; replace with approved brand tokens later. */
+@theme {
+  --font-sans:
+    system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply m-0 bg-white font-sans text-neutral-900 antialiased;
+  }
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 4px;
+  }
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
+
+@layer components {
+  .page-container {
+    width: min(100% - 2rem, 72rem);
+    margin-inline: auto;
+  }
+  .section-space {
+    padding-block: clamp(2rem, 6vw, 5rem);
+  }
+}

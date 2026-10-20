@@ -1,0 +1,25 @@
+---
+import SEO, { type Props } from '@/components/common/SEO.astro';
+import '@/styles/global.css';
+const props: Props = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <SEO {...props} />
+  </head>
+  <body>
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:bg-white focus:p-4"
+    >
+      Skip to content
+    </a>
+    <main id="main">
+      <slot />
+    </main>
+  </body>
+</html>
